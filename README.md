@@ -1,1 +1,9 @@
-I'm a BSIT 4th year student from Cebu City studying at UC. My portfolio showcases full-stack projects I've built using React, Express.js, and SQLite. I'm passionate about creating user-friendly web applications with clean code and modern design. I enjoy both frontend development and UI/UX design, and I love learning new technologies. This portfolio represents my journey as a developer and the skills I've developed throughout my studies.
+
+## About Me
+
+I enjoy both frontend development and UI/UX design, and I love learning new technologies. This portfolio represents my journey as a developer and the skills I've built throughout my studies.
+
+## Contact
+
+- Email: aprilescuadro2004@gmail.com
+- GitHub: [@AprilEscuadro](https://github.com/AprilEscuadro)
