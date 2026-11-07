@@ -1,291 +1,144 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>April Dianne &mdash; Portfolio</title>
-    <link
-      rel="stylesheet"
-      href="{{ url_for('static', filename='css/style.css') }}"
-    />
-  </head>
-  <body>
-    <nav>
-      <div class="logo">April Dianne</div>
-      <ul class="nav-links">
-        <li><a href="#about">About Me</a></li>
-        <li><a href="#skills">Skills</a></li>
-        <li><a href="#projects">Portfolio</a></li>
-        <li><a href="#contact">Contact Me</a></li>
-      </ul>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Portfolio of April Dianne (Pril) Escuadro: UI/UX design, QA testing, and web development projects.">
+  <title>Pril Escuadro | UI/UX, QA &amp; Web Development</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="#home" aria-label="Pril Escuadro home">
+      <span class="brand-name">Pril Escuadro</span><span class="brand-sub">&#10022; &nbsp; UI/UX &middot; QA &middot; WEB</span>
+    </a>
+    <button class="menu-toggle" aria-label="Open navigation" aria-expanded="false">&#9776;</button>
+    <nav class="main-nav" aria-label="Main navigation">
+      <a href="#home">Home</a><a href="#about">About</a><a href="#services">What I Do</a>
+      <a href="#work">Projects</a><a href="#achievements">Achievements</a><a href="#contact">Contact</a>
     </nav>
+    <a class="round-note" href="#contact">Let&rsquo;s Work<br>Together <span>&hearts;</span></a>
+  </header>
 
-    <!-- HERO -->
-    <section class="hero" id="home">
-      <div class="hero-text">
-        <p class="hero-eyebrow">&#10022; full-stack developer &#10022;</p>
-        <h1 class="hero-name">April Dianne</h1>
-        <p class="hero-role">
-          BS Computer Science &middot; University of Cebu &ndash; CCS
-        </p>
-        <p class="hero-desc">
-          I'm April, and I build the full web system &mdash; database, backend
-          logic, and every last detail of the interface. From capstone builds to
-          practical exams, I like it clean, working, and easy to explain.
-        </p>
-        <div class="btn-row">
-          <a href="#projects" class="btn btn-primary">View Portfolio</a>
-          <a href="#contact" class="btn btn-outline">Contact Me</a>
+  <main>
+    <section class="hero paper" id="home">
+      <div class="hero-landscape"></div>
+      <img class="hero-cottage" src="{{ url_for('static', filename='images/cottage.jpg') }}" alt="" aria-hidden="true">
+      <div class="hero-copy">
+        <p class="eyebrow">UI/UX DESIGN &middot; QA TESTING &middot; WEB DEVELOPMENT</p>
+        <h1>Interfaces that<br>feel simple and<br><em>work</em> well.</h1>
+        <div class="flourish">&#8988; &#10022; &#8988;</div>
+        <p>I&rsquo;m April Dianne (Pril) Escuadro, a 4th-year IT student<br class="desktop"> who designs user-friendly interfaces and tests them<br class="desktop"> so they are clear, usable, and bug-free.</p>
+        <a class="button button-green" href="#work">Explore my work <span>&#8599;</span></a>
+      </div>
+      <img class="hero-art" src="{{ url_for('static', filename='images/hero-illustration.jpg') }}" alt="" aria-hidden="true">
+      <span class="bird bird-one">&#10022;</span><span class="bird bird-two">&#10022;</span>
+    </section>
+
+    <section class="intro-services" id="about">
+      <div class="intro paper">
+        <img src="{{ url_for('static', filename='images/intro-illustration.jpg') }}" alt="" aria-hidden="true">
+        <div><h2>Hello, I&rsquo;m Pril <span>&#10087;</span></h2>
+          <p>I&rsquo;m a BSIT student at the University of Cebu.<br> I enjoy both UI/UX design and front-end development,<br> and I care about clean code, modern design,<br> and learning new things every day.</p>
+          <a class="button button-rust" href="#contact">Get in touch</a>
         </div>
       </div>
-      <div class="hero-photo-wrap">
-        <img
-          src="{{ url_for('static', filename='images/profile.png') }}"
-          alt="April Dianne"
-          class="hero-photo"
-        />
+      <div class="services-panel" id="services">
+        <h2>What I Do</h2>
+        <div class="service-grid">
+          <article class="service"><span class="service-icon">&#127807;</span><h3>UI/UX<br>Design</h3><p>Wireframes, user flows,<br>and Figma prototypes.</p></article>
+          <article class="service"><span class="service-icon">&#128269;</span><h3>QA &amp; Usability<br>Testing</h3><p>Manual testing, bug<br>reports, and feedback.</p></article>
+          <article class="service"><span class="service-icon">&#127804;</span><h3>Design Systems<br>&amp; Handoff</h3><p>Brand guidelines and<br>developer-ready screens.</p></article>
+          <article class="service"><span class="service-icon">&#127969;</span><h3>Web<br>Development</h3><p>Flask, SQLite, HTML, CSS,<br>Bootstrap, and JavaScript.</p></article>
+        </div>
+        <a class="light-link" href="#work">See my projects <span>&#8599;</span></a>
       </div>
     </section>
 
-    <div class="ribbon-divider"><span>&#10022;</span></div>
-
-    <!-- ABOUT -->
-    <section id="about">
-      <p class="section-label">About Me</p>
-      <h2 class="section-title">Who's behind the code</h2>
-      <div class="about-grid">
-        <div class="about-text">
-          <p>
-            I'm a Computer Science student at the University of Cebu &mdash;
-            College of Computer Studies, focused on building complete, working
-            systems rather than just front-end shells. Most of my projects come
-            from capstone work and practical exams: registration systems,
-            inventory trackers, monitoring dashboards, and CRUD-heavy apps.
-          </p>
-          <p>
-            I like clean, readable code over clever abstractions &mdash; if it
-            works and it's easy to explain in a defense, it's good code.
-          </p>
-        </div>
-        <div class="about-facts">
-          <div class="fact">
-            <span class="k">School</span>
-            University of Cebu &mdash; College of Computer Studies
-          </div>
-          <div class="fact">
-            <span class="k">Focus</span>
-            Full-stack web development &amp; database design
-          </div>
-          <div class="fact">
-            <span class="k">Currently</span>
-            Building capstone &amp; practical exam projects
-          </div>
-        </div>
+    <section class="works-section" id="work">
+      <div class="section-heading"><h2>Selected Projects <span>&#10087;</span></h2><p>Things I&rsquo;ve designed, built, and tested</p></div>
+      <div class="filters" role="group" aria-label="Filter projects">
+        <button class="filter active" data-filter="all">All</button>
+        <button class="filter" data-filter="uiux">UI/UX</button>
+        <button class="filter" data-filter="web">Web Apps</button>
+        <button class="filter" data-filter="school">School</button>
       </div>
+      <div class="work-grid">
+        {% for p in projects %}
+        <article class="work-card" data-category="{{ p.cats }}">
+          <img src="{{ url_for('static', filename='images/' ~ p.img) }}" alt="{{ p.alt }}">
+          <h3>{{ p.title }}</h3>
+          {% if p.role %}<p class="work-role">{{ p.role }}</p>{% endif %}
+          <p class="work-desc">{{ p.desc }}</p>
+          <div class="work-tags">{% for t in p.stack %}<span>{{ t }}</span>{% endfor %}</div>
+          {% if p.url %}<a class="work-link" href="{{ p.url }}" target="_blank" rel="noopener">View on GitHub &rarr;</a>{% endif %}
+        </article>
+        {% endfor %}
+      </div>
+      <a class="text-link" href="https://github.com/AprilEscuadro" target="_blank" rel="noopener">See all repositories on GitHub <span>&rarr;</span></a>
     </section>
 
-    <div class="ribbon-divider"><span>&#10022;</span></div>
-
-    <!-- SKILLS -->
-    <section id="skills">
-      <p class="section-label">Skills</p>
-      <h2 class="section-title">What I work with</h2>
-      <div class="skills-grid">
-        <div class="skill-card">
-          <h3>Backend</h3>
-          <div class="tag-row">
-            <span class="tag">Python</span>
-            <span class="tag">Flask</span>
-            <span class="tag">PHP</span>
-            <span class="tag">Node.js</span>
-            <span class="tag">Express</span>
-          </div>
-        </div>
-        <div class="skill-card">
-          <h3>Database</h3>
-          <div class="tag-row">
-            <span class="tag">SQLite</span>
-            <span class="tag">MySQL</span>
-          </div>
-        </div>
-        <div class="skill-card">
-          <h3>Frontend</h3>
-          <div class="tag-row">
-            <span class="tag">HTML5</span>
-            <span class="tag">CSS3</span>
-            <span class="tag">JavaScript</span>
-            <span class="tag">Jinja2</span>
-            <span class="tag">Angular</span>
-          </div>
-        </div>
-        <div class="skill-card">
-          <h3>Tools</h3>
-          <div class="tag-row">
-            <span class="tag">Git</span>
-            <span class="tag">XAMPP</span>
-            <span class="tag">VS Code</span>
-            <span class="tag">Postman</span>
-          </div>
+    <section class="process-section">
+      <img src="{{ url_for('static', filename='images/process-squirrel.jpg') }}" alt="" aria-hidden="true" class="process-art">
+      <div class="process-content"><h2>How I Work <span>&#8988;</span></h2>
+        <div class="steps">
+          <article><span class="step-icon">&#128214;</span><b>1</b><h3>Understand</h3><p>I learn the users,<br> goals, and problems.</p></article>
+          <article><span class="step-icon">&#127793;</span><b>2</b><h3>Wireframe</h3><p>I sketch flows and<br> screens in Figma.</p></article>
+          <article><span class="step-icon">&#127912;</span><b>3</b><h3>Prototype</h3><p>I build clickable<br> and coded prototypes.</p></article>
+          <article><span class="step-icon">&#128269;</span><b>4</b><h3>Test</h3><p>I check usability and<br> report bugs clearly.</p></article>
+          <article><span class="step-icon">&hearts;</span><b>5</b><h3>Refine &amp; Hand Off</h3><p>I apply feedback and<br> hand off to developers.</p></article>
         </div>
       </div>
     </section>
 
-    <div class="ribbon-divider"><span>&#10022;</span></div>
-
-    <!-- PROJECTS -->
-    <section id="projects">
-      <p class="section-label">Portfolio</p>
-      <h2 class="section-title">Things I've built</h2>
-      <div class="projects-grid">
-        <div class="project-card">
-          <p class="project-num">01</p>
-          <h3>Library Management System</h3>
-          <p>
-            Full CRUD and search across all modules &mdash; books, members, and
-            borrowing records.
-          </p>
-          <div class="tag-row">
-            <span class="tag">Flask</span>
-            <span class="tag">SQLite</span>
-          </div>
-        </div>
-        <div class="project-card">
-          <p class="project-num">02</p>
-          <h3>CCS Sit-in Monitoring System</h3>
-          <p>
-            Session tracking, live sit-in duration, PC number selection, and an
-            admin dashboard for lab usage.
-          </p>
-          <div class="tag-row">
-            <span class="tag">PHP</span>
-            <span class="tag">MySQL</span>
-          </div>
-        </div>
-        <div class="project-card">
-          <p class="project-num">03</p>
-          <h3>Clinic Consultations Logging System</h3>
-          <p>
-            Tracks student clinic visits and consultation records with full CRUD
-            support.
-          </p>
-          <div class="tag-row">
-            <span class="tag">Flask</span>
-            <span class="tag">SQLite</span>
-          </div>
-        </div>
-        <div class="project-card">
-          <p class="project-num">04</p>
-          <h3>UC ICT Congress Registration System</h3>
-          <p>
-            Event registration platform built for a university-wide ICT
-            congress.
-          </p>
-          <div class="tag-row">
-            <span class="tag">Flask</span>
-            <span class="tag">Jinja2</span>
-          </div>
-        </div>
-        <div class="project-card">
-          <p class="project-num">05</p>
-          <h3>Events Registration System</h3>
-          <p>General-purpose event sign-up system with attendee management.</p>
-          <div class="tag-row">
-            <span class="tag">Flask</span>
-            <span class="tag">SQLite</span>
-          </div>
-        </div>
-        <div class="project-card">
-          <p class="project-num">06</p>
-          <h3>Auth System with JWT &amp; RBAC</h3>
-          <p>
-            Full-stack authentication: refresh token rotation, role-based
-            access, email verification, Swagger docs.
-          </p>
-          <div class="tag-row">
-            <span class="tag">Node.js</span>
-            <span class="tag">Angular</span>
-            <span class="tag">MySQL</span>
-          </div>
-        </div>
+    <section class="achievements" id="achievements">
+      <h2>Achievements <span>&hearts;</span></h2>
+      <div class="achieve-grid">
+        {% for a in achievements %}
+        <article class="achieve-card">
+          <span class="achieve-icon">{{ a.icon }}</span>
+          <h3>{{ a.title }}</h3>
+          <p>{{ a.desc }}</p>
+          <small>{{ a.meta }}</small>
+        </article>
+        {% endfor %}
       </div>
     </section>
 
-    <div class="ribbon-divider"><span>&#10022;</span></div>
-
-    <!-- TESTIMONIALS (edit or remove this section if not applicable) -->
-    <section id="testimonials">
-      <p class="section-label">Kind Words</p>
-      <h2 class="section-title">What people say</h2>
-      <div class="testimonial-grid">
-        <div class="testimonial-card">
-          <p>
-            "April delivered the whole system ahead of deadline and walked us
-            through every part clearly during defense."
-          </p>
-          <span class="testimonial-name"
-            >&mdash; Groupmate, Capstone Project</span
-          >
-        </div>
-        <div class="testimonial-card">
-          <p>
-            "Clean code, working demo, no drama. Exactly what you want in a
-            practical exam partner."
-          </p>
-          <span class="testimonial-name">&mdash; Classmate, CCS</span>
-        </div>
+    <section class="contact-banner" id="contact">
+      <img src="{{ url_for('static', filename='images/mailbox.jpg') }}" alt="" aria-hidden="true">
+      <div><h2>Let&rsquo;s Create<br>Something Together</h2><p>Looking for an OJT intern in UI/UX or QA?<br> I&rsquo;d love to hear from you!</p><a class="button button-green" href="mailto:aprilescuadro2004@gmail.com">Email me <span>&#8599;</span></a></div>
+      <div class="social-note">You can also find me here:<br>
+        <a href="https://github.com/AprilEscuadro" target="_blank" rel="noopener">GitHub</a> &middot;
+        <a href="mailto:aprilescuadro2004@gmail.com">Email</a>
       </div>
     </section>
 
-    <div class="ribbon-divider"><span>&#10022;</span></div>
-
-    <!-- CONTACT -->
-    <section id="contact">
-      <p class="section-label">Contact Me</p>
-      <h2 class="section-title">Let's talk</h2>
-
-      <div class="contact-box">
-        {% with messages = get_flashed_messages(with_categories=true) %} {% if
-        messages %} {% for category, msg in messages %}
-        <div class="flash {{ category }}">{{ msg }}</div>
-        {% endfor %} {% endif %} {% endwith %}
-
-        <form action="{{ url_for('contact') }}" method="POST">
-          <div class="form-group">
-            <label for="name">Name</label>
-            <input
-              type="text"
-              id="name"
-              name="name"
-              placeholder="Juan Dela Cruz"
-              required
-            />
-          </div>
-          <div class="form-group">
-            <label for="email">Email</label>
-            <input
-              type="email"
-              id="email"
-              name="email"
-              placeholder="juan@email.com"
-              required
-            />
-          </div>
-          <div class="form-group">
-            <label for="message">Message</label>
-            <textarea
-              id="message"
-              name="message"
-              placeholder="Type your message here..."
-              required
-            ></textarea>
-          </div>
-          <button type="submit" class="btn btn-primary">Send Message</button>
-        </form>
-      </div>
+    <section class="contact-form-section">
+      <h2>Or leave a message</h2>
+      {% with messages = get_flashed_messages(with_categories=true) %}
+        {% for category, message in messages %}
+        <p class="flash flash-{{ category }}" role="status">{{ message }}</p>
+        {% endfor %}
+      {% endwith %}
+      <form class="contact-form" action="{{ url_for('contact') }}" method="post">
+        <label>Name<input type="text" name="name" required></label>
+        <label>Email<input type="email" name="email" required></label>
+        <label class="full">Message<textarea name="message" rows="4" required></textarea></label>
+        <button class="button button-rust" type="submit">Send message</button>
+      </form>
     </section>
+  </main>
 
-    <footer>&copy; 2026 April Dianne &mdash; built with Flask.</footer>
-
-    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
-  </body>
+  <footer class="site-footer">
+    <div class="footer-brand"><span class="brand-name">Pril Escuadro</span><span class="brand-sub">&#10022; &nbsp; UI/UX &middot; QA &middot; WEB</span><p>Designing, testing, and building with care. &#10087;</p></div>
+    <div><h3>Explore</h3><a href="#about">About</a><a href="#services">What I Do</a><a href="#work">Projects</a><a href="#achievements">Achievements</a><a href="#contact">Contact</a></div>
+    <div><h3>Find me</h3><a href="https://github.com/AprilEscuadro" target="_blank" rel="noopener">GitHub</a><a href="mailto:aprilescuadro2004@gmail.com">Email</a></div>
+    <div class="copyright">&copy; 2026 April Dianne D. Escuadro. All rights reserved. <span>Made with &hearts; in Cebu City</span></div>
+  </footer>
+  <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
 </html>
