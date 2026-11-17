@@ -28,7 +28,7 @@ PROJECTS = [
         "stack": ["Flask", "SQLite", "Jinja2", "JavaScript"],
         "url": "https://github.com/AprilEscuadro/SitinMonitoringSystem",
         "cats": "uiux web",
-        "img": "green-door.jpg",
+        "img": "green-door.jpeg",
         "alt": "",
     },
     {

@@ -1066,3 +1066,215 @@ h1 em {
         grid-template-columns: 1fr 1fr
     }
 }
+
+/* ===== Juniper Finch polish: wavy edges, organic shapes, readable text ===== */
+
+/* wavy section edges */
+.site-header::after,
+.contact-banner::before,
+.site-footer::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 18px;
+    pointer-events: none;
+    background-repeat: no-repeat;
+    background-size: 100% 100%
+}
+
+.site-header::after {
+    top: 100%;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 24' preserveAspectRatio='none'%3E%3Cpath fill='%23123f38' d='M0 0h1200v8c-60 14-120 14-200 4S840 2 720 10 480 22 360 12 160 2 0 12z'/%3E%3C/svg%3E")
+}
+
+.contact-banner {
+    overflow: visible;
+    margin-top: 18px
+}
+
+.contact-banner::before {
+    top: -17px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 24' preserveAspectRatio='none'%3E%3Cpath fill='%23a65d3e' d='M0 24V12C90 2 170 2 260 10S440 22 560 12 800 0 920 10s200 8 280 0v14z'/%3E%3C/svg%3E")
+}
+
+.site-footer::before {
+    top: -17px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 24' preserveAspectRatio='none'%3E%3Cpath fill='%23123f38' d='M0 24V10C100 0 200 4 300 12S500 22 640 12 880 2 1000 10s140 6 200 0v14z'/%3E%3C/svg%3E")
+}
+
+.site-footer {
+    margin-top: 18px
+}
+
+/* hand-drawn feel: uneven corners */
+.services-panel {
+    border-radius: 70px 0 0 60px / 55px 0 0 80px
+}
+
+.process-section {
+    border-radius: 40px 55px 35px 60px / 45px 30px 55px 35px
+}
+
+.work-card,
+.achieve-card {
+    border-radius: 18px 24px 16px 22px;
+    transition: transform .2s ease, box-shadow .2s ease
+}
+
+.work-card:hover,
+.achieve-card:hover {
+    transform: rotate(-1deg) translateY(-4px);
+    box-shadow: 0 8px 16px #6c573030
+}
+
+.work-card img {
+    border-radius: 14px 18px 12px 16px
+}
+
+/* thin dividers between the 4 services */
+.service+.service {
+    border-left: 1px solid #ffffff24
+}
+
+/* bigger, easier-to-read text on tablet + desktop */
+@media(min-width:621px) {
+    body {
+        font-size: 16px
+    }
+
+    .eyebrow {
+        font-size: 11px
+    }
+
+    .hero-copy>p:not(.eyebrow) {
+        font-size: 15px
+    }
+
+    .button,
+    .button-rust {
+        font-size: 11px;
+        padding: 12px 22px
+    }
+
+    .intro p {
+        font-size: 13px
+    }
+
+    .service h3 {
+        font-size: 15px
+    }
+
+    .service p {
+        font-size: 12px
+    }
+
+    .section-heading p,
+    .filter,
+    .light-link,
+    .text-link {
+        font-size: 12px
+    }
+
+    .work-card h3 {
+        font-size: 17px
+    }
+
+    .work-card .work-role {
+        font-size: 12px
+    }
+
+    .work-card .work-desc {
+        font-size: 13px
+    }
+
+    .work-tags span,
+    .work-link {
+        font-size: 11px
+    }
+
+    .steps h3 {
+        font-size: 15px
+    }
+
+    .steps p {
+        font-size: 12px
+    }
+
+    .achieve-card p {
+        font-size: 13px
+    }
+
+    .contact-banner p {
+        font-size: 13px
+    }
+
+    .social-note {
+        font-size: 14px
+    }
+
+    .contact-form label {
+        font-size: 12px
+    }
+
+    .site-footer>div:not(.copyright) a,
+    .footer-brand p {
+        font-size: 13px
+    }
+
+    .copyright {
+        font-size: 12px
+    }
+}
+
+@media(min-width:901px) {
+    .main-nav a {
+        font-size: 12px
+    }
+}
+
+@media(max-width:620px) {
+    .service:nth-child(2n+1) {
+        border-left: 0
+    }
+}
+
+
+/* ===== Fixes round 2 ===== */
+
+/* wave was covering the round button */
+.site-header::after { z-index: 0 }
+.round-note { position: relative; z-index: 2 }
+@media(min-width:621px) {
+    .site-header { height: 92px; padding-top: 7px; padding-bottom: 7px }
+    .round-note { margin-top: 0 }
+}
+
+/* remove the olive band that cut across the hero */
+.hero-landscape { display: none }
+
+/* soft-fade the hero images so no hard rectangle edges show */
+.hero-cottage {
+    mask-image: linear-gradient(to right, #000 70%, transparent), linear-gradient(to bottom, transparent, #000 22%);
+    -webkit-mask-image: linear-gradient(to right, #000 70%, transparent), linear-gradient(to bottom, transparent, #000 22%);
+    mask-composite: intersect;
+    -webkit-mask-composite: source-in
+}
+/* trims the leftover mockup button at the top-right of the hero art */
+.hero-art { clip-path: polygon(0 0, 74% 0, 74% 9%, 100% 9%, 100% 100%, 0 100%) }
+
+/* multiply made images on green/rust sections look dark and muddy */
+.process-art,
+.contact-banner>img {
+    mix-blend-mode: normal;
+    border-radius: 0;
+    mask-image: radial-gradient(ellipse at center, #000 55%, transparent 78%);
+    -webkit-mask-image: radial-gradient(ellipse at center, #000 55%, transparent 78%)
+}
+
+/* centered project grid, no lonely last card */
+.work-grid {
+    max-width: 1200px;
+    margin: 0 auto;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr))
+}
