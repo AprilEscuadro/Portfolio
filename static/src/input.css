@@ -1,0 +1,41 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+    .achievements {
+        @apply px-[6%] pt-[30px] pb-[35px] text-center;
+    }
+
+    .achievements h2 {
+        @apply mt-0 mb-4 font-serif text-[24px] font-semibold leading-[normal];
+    }
+
+    .achievements h2 span {
+        @apply text-rust;
+    }
+
+    .achieve-grid {
+        @apply grid grid-cols-[repeat(auto-fit, minmax(240px, 1fr))] gap-5;
+    }
+
+    .achieve-card {
+        @apply rounded-[18px_24px_16px_22px] border border-line bg-paper px-5 py-[18px] text-left shadow-[0_3px_8px_#6c57301a] transition duration-200 hover:-translate-y-1 hover:-rotate-1 hover:shadow-[0_8px_16px_#6c573030];
+    }
+
+    .achieve-icon {
+        @apply mb-2 grid size-[46px] place-items-center rounded-full bg-sand text-[22px];
+    }
+
+    .achieve-card h3 {
+        @apply mt-0 mb-1 font-serif text-[15px] font-semibold leading-[normal] text-green;
+    }
+
+    .achieve-card p {
+        @apply m-0 mb-2 text-[11px] sm:text-[13px];
+    }
+
+    .achieve-card small {
+        @apply text-[10px] font-semibold text-muted;
+    }
+}

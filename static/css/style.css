@@ -13,7 +13,7 @@
 }
 
 html {
-    scroll-behavior: smooth
+    scroll-behavior: smooth;
 }
 
 body {
@@ -720,43 +720,6 @@ h1 em {
         row-gap: 20px
     }
 
-    .process-section {
-        padding: 15px 4%;
-        margin: 0 3%;
-    }
-
-    .process-art {
-        display: none
-    }
-
-    .process-content h2 {
-        font-size: 21px
-    }
-
-    .steps {
-        grid-template-columns: repeat(5, minmax(0, 1fr));
-        gap: 4px
-    }
-
-    .step-icon {
-        width: 43px;
-        height: 43px;
-        font-size: 19px
-    }
-
-    .steps b {
-        right: 0;
-        font-size: 11px
-    }
-
-    .steps h3 {
-        font-size: 9px
-    }
-
-    .steps p {
-        font-size: 7px
-    }
-
     .contact-banner {
         flex-wrap: wrap;
         gap: 10px;
@@ -872,63 +835,6 @@ h1 em {
 
 .work-link:hover {
     color: var(--rust)
-}
-
-.achievements {
-    padding: 30px 6% 35px;
-    text-align: center
-}
-
-.achievements h2 {
-    font: 600 24px "Playfair Display", serif;
-    margin: 0 0 16px
-}
-
-.achievements h2 span {
-    color: var(--rust)
-}
-
-.achieve-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-    gap: 20px
-}
-
-.achieve-card {
-    background: #fff8e8;
-    border: 1px solid #e3d4b5;
-    border-radius: 18px;
-    padding: 18px 20px;
-    text-align: left;
-    box-shadow: 0 3px 8px #6c57301a
-}
-
-.achieve-icon {
-    display: grid;
-    place-items: center;
-    width: 46px;
-    height: 46px;
-    border-radius: 50%;
-    background: #e8dfc6;
-    font-size: 22px;
-    margin-bottom: 8px
-}
-
-.achieve-card h3 {
-    font: 600 15px "Playfair Display", serif;
-    margin: 0 0 4px;
-    color: var(--green)
-}
-
-.achieve-card p {
-    font-size: 11px;
-    margin: 0 0 8px
-}
-
-.achieve-card small {
-    color: #8b785a;
-    font-size: 10px;
-    font-weight: 600
 }
 
 .social-note a {
@@ -1112,18 +1018,12 @@ h1 em {
     border-radius: 70px 0 0 60px / 55px 0 0 80px
 }
 
-.process-section {
-    border-radius: 40px 55px 35px 60px / 45px 30px 55px 35px
-}
-
-.work-card,
-.achieve-card {
+.work-card {
     border-radius: 18px 24px 16px 22px;
     transition: transform .2s ease, box-shadow .2s ease
 }
 
-.work-card:hover,
-.achieve-card:hover {
+.work-card:hover {
     transform: rotate(-1deg) translateY(-4px);
     box-shadow: 0 8px 16px #6c573030
 }
@@ -1193,18 +1093,6 @@ h1 em {
         font-size: 11px
     }
 
-    .steps h3 {
-        font-size: 15px
-    }
-
-    .steps p {
-        font-size: 12px
-    }
-
-    .achieve-card p {
-        font-size: 13px
-    }
-
     .contact-banner p {
         font-size: 13px
     }
@@ -1243,15 +1131,31 @@ h1 em {
 /* ===== Fixes round 2 ===== */
 
 /* wave was covering the round button */
-.site-header::after { z-index: 0 }
-.round-note { position: relative; z-index: 2 }
+.site-header::after {
+    z-index: 0
+}
+
+.round-note {
+    position: relative;
+    z-index: 2
+}
+
 @media(min-width:621px) {
-    .site-header { height: 92px; padding-top: 7px; padding-bottom: 7px }
-    .round-note { margin-top: 0 }
+    .site-header {
+        height: 92px;
+        padding-top: 7px;
+        padding-bottom: 7px
+    }
+
+    .round-note {
+        margin-top: 0
+    }
 }
 
 /* remove the olive band that cut across the hero */
-.hero-landscape { display: none }
+.hero-landscape {
+    display: none
+}
 
 /* soft-fade the hero images so no hard rectangle edges show */
 .hero-cottage {
@@ -1260,11 +1164,13 @@ h1 em {
     mask-composite: intersect;
     -webkit-mask-composite: source-in
 }
+
 /* trims the leftover mockup button at the top-right of the hero art */
-.hero-art { clip-path: polygon(0 0, 74% 0, 74% 9%, 100% 9%, 100% 100%, 0 100%) }
+.hero-art {
+    clip-path: polygon(0 0, 74% 0, 74% 9%, 100% 9%, 100% 100%, 0 100%)
+}
 
 /* multiply made images on green/rust sections look dark and muddy */
-.process-art,
 .contact-banner>img {
     mix-blend-mode: normal;
     border-radius: 0;
@@ -1277,4 +1183,200 @@ h1 em {
     max-width: 1200px;
     margin: 0 auto;
     grid-template-columns: repeat(auto-fill, minmax(260px, 1fr))
+}
+
+/* ===== Achievements ===== */
+.achievements {
+    padding: 30px 6% 35px;
+    text-align: center
+}
+
+.achievements h2 {
+    font: 600 24px "Playfair Display", serif;
+    margin: 0 0 16px
+}
+
+.achievements h2 span {
+    color: var(--rust)
+}
+
+.achieve-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 20px
+}
+
+.achieve-card {
+    background: #fff8e8;
+    border: 1px solid #e3d4b5;
+    border-radius: 18px 24px 16px 22px;
+    padding: 18px 20px;
+    text-align: left;
+    box-shadow: 0 3px 8px #6c57301a;
+    transition: transform .2s ease, box-shadow .2s ease
+}
+
+.achieve-card:hover {
+    transform: rotate(-1deg) translateY(-4px);
+    box-shadow: 0 8px 16px #6c573030
+}
+
+.achieve-icon {
+    display: grid;
+    place-items: center;
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    background: #e8dfc6;
+    font-size: 22px;
+    margin-bottom: 8px
+}
+
+.achieve-card h3 {
+    font: 600 15px "Playfair Display", serif;
+    margin: 0 0 4px;
+    color: var(--green)
+}
+
+.achieve-card p {
+    font-size: 11px;
+    margin: 0 0 8px
+}
+
+.achieve-card small {
+    color: #8b785a;
+    font-size: 10px;
+    font-weight: 600
+}
+
+@media(min-width:621px) {
+    .achieve-card p {
+        font-size: 13px
+    }
+}
+
+/* ===== Merged hero: intro + photo + What I Do ===== */
+.hero-profile {
+    padding: 44px 6% 44px;
+    position: relative
+}
+
+.hp-top {
+    display: grid;
+    grid-template-columns: 1.15fr .85fr;
+    gap: 40px;
+    align-items: center;
+    max-width: 1100px;
+    margin: 0 auto 36px
+}
+
+.hp-copy .eyebrow span {
+    color: var(--rust)
+}
+
+.hero-profile h1 {
+    font: 600 clamp(34px, 4.2vw, 54px)/1.1 "Playfair Display", serif;
+    margin: 10px 0 16px;
+    color: var(--green)
+}
+
+.hp-intro {
+    font-size: 15px;
+    max-width: 520px;
+    margin: 0 0 20px
+}
+
+.hp-actions {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-bottom: 18px
+}
+
+.hp-tags {
+    list-style: none;
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    padding: 0;
+    margin: 0
+}
+
+.hp-tags li {
+    background: #e8dfc6;
+    color: var(--green);
+    font-size: 12px;
+    font-weight: 600;
+    padding: 5px 12px;
+    border-radius: 14px
+}
+
+.hp-photo {
+    position: relative;
+    justify-self: center;
+    width: min(100%, 340px)
+}
+
+.hp-photo::before {
+    content: "";
+    position: absolute;
+    inset: 14px -14px -14px 14px;
+    background: var(--rust);
+    border-radius: 170px 170px 26px 26px
+}
+
+.hp-photo img {
+    position: relative;
+    display: block;
+    width: 100%;
+    aspect-ratio: 4/5;
+    object-fit: cover;
+    object-position: 50% 32%;
+    border-radius: 170px 170px 26px 26px;
+    border: 6px solid #fff6e4;
+    box-shadow: 0 10px 24px #6c573040
+}
+
+.hero-profile .services-panel {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 23px 4% 17px;
+    border-radius: 40px 55px 35px 60px / 45px 30px 55px 35px
+}
+
+@media(max-width:900px) {
+    .hp-top {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 28px
+    }
+
+    .hp-intro {
+        margin-left: auto;
+        margin-right: auto
+    }
+
+    .hp-actions,
+    .hp-tags {
+        justify-content: center
+    }
+
+    .hp-photo {
+        order: -1;
+        width: min(70%, 280px)
+    }
+}
+
+@media(max-width:620px) {
+    .hero-profile {
+        padding: 30px 5%
+    }
+
+    .hero-profile h1 {
+        font-size: 36px
+    }
+
+    .hp-intro {
+        font-size: 14px
+    }
 }
