@@ -24,3 +24,17 @@ document.querySelectorAll('.filter').forEach(button => {
         });
     });
 });
+
+// Highlight the nav link of the section currently in view
+const navLinks = document.querySelectorAll('.main-nav a');
+const sections = [...navLinks].map(a => document.querySelector(a.getAttribute('href'))).filter(Boolean);
+function setActive() {
+    let current = sections[0];
+    sections.forEach(sec => {
+        if (sec.id === 'about' && window.scrollY < 300) return; // About sits inside the hero
+        if (sec.getBoundingClientRect().top <= 160) current = sec;
+    });
+    navLinks.forEach(a => a.classList.toggle('active', a.getAttribute('href') === '#' + current.id));
+}
+window.addEventListener('scroll', setActive, { passive: true });
+setActive();
